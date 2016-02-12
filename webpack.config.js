@@ -33,7 +33,7 @@ module.exports = {
       L.css,
       L.jpeg
     ],
-    postLoaders: [
+    preLoaders: [
       L.jsx,
     ]
   },
