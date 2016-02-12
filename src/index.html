@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta content='object' property='og:type' />
+  <meta content='Sphere test' property='og:site_name' />
+  <meta content='#111111' name='theme-color' />
+  <meta content='#111111' name='msapplication-TileColor' />
+  <title></title>
+  <link rel="shortcut icon" href="/favicon.ico?<%= version %>">
+  <% if (process.env.NODE_ENV == 'production') { %>
+  <link rel="stylesheet" href="/css/sphere-<%= version %>.css" /><% } %>
+</head>
+<body>
+  <div id="sphere"></div>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,200,500,600' rel='stylesheet' type='text/css' />
+  <script src="/js/sphere-<%= version %>.js"></script>
+</body>
+</html>
