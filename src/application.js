@@ -2,7 +2,7 @@
 import 'index.html';
 import 'nonstandard';
 import 'decorators';
-import 'babel-core/polyfill';
+import 'babel-polyfill';
 import 'normalize.css/normalize.css';
 
 import React from 'react';

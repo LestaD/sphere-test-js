@@ -27,14 +27,14 @@ module.exports = {
   debug: false,
   module: {
     loaders: [
-      L.jsx,
-      L.css,
+      L.json,
       L.styl,
       L.html,
-      L.json,
+      L.css,
       L.jpeg
     ],
     postLoaders: [
+      L.jsx,
     ]
   },
   resolve: {
@@ -42,8 +42,8 @@ module.exports = {
     modulesDirectories: [
       'web_modules',
       'node_modules',
-      Path.join(__dirname, 'app'),
-      Path.join(__dirname, 'app', 'components')
+      Path.join(__dirname, 'src'),
+      Path.join(__dirname, 'src', 'components')
     ]
   },
   resolveLoader: {

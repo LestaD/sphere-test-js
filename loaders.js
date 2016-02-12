@@ -32,20 +32,20 @@ exports.css_loaders_dev = [
 
 exports.css = {
   test: /\.css$/,
-  loaders: [Extract.extract('style', exports.css_loaders)]
+  loader: Extract.extract('style', exports.css_loaders)
 };
 
 
 exports.styl_loaders = exports.css_loaders.slice();
-exports.styl_loaders.unshift('stylus?paths=' + Path.join(__dirname, 'src', 'stylus'));
+exports.styl_loaders.push('stylus?paths=' + Path.join(__dirname, 'src', 'stylus'));
 
 exports.styl = {
   test: /\.styl$/,
-  loaders: [Extract.extract('style', exports.styl_loaders)]
+  loader: Extract.extract('style', exports.styl_loaders)
 };
 
 exports.styl_loaders_dev = exports.css_loaders_dev.slice();
-exports.styl_loaders_dev.unshift('stylus?paths=' + Path.join(__dirname, 'src', 'stylus'));
+exports.styl_loaders_dev.push('stylus?paths=' + Path.join(__dirname, 'src', 'stylus'));
 
 
 exports.html = {
@@ -64,9 +64,7 @@ exports.html = {
 
 exports.json = {
   test: /\.json$/,
-  loaders: [
-    'json'
-  ]
+  loader: 'json'
 };
 
 
