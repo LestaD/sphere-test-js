@@ -13,7 +13,9 @@ var L = require('./loaders.js');
 
 module.exports = {
   context: Path.join(__dirname, 'src/'),
-  entry: ['./application.js'],
+  entry: {
+    sphere: ['./application.js']
+  },
   output: {
     path: Path.join(__dirname, 'dist'),
     filename: Util.format('js/[name]-%s.js', Package.version),
