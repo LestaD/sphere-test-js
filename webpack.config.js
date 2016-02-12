@@ -27,6 +27,7 @@ module.exports = {
   debug: false,
   module: {
     loaders: [
+      L.jsx,
       L.css,
       L.styl,
       L.html,
@@ -34,17 +35,19 @@ module.exports = {
       L.jpeg
     ],
     postLoaders: [
-      L.jsx
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.json', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
     modulesDirectories: [
       'web_modules',
       'node_modules',
       Path.join(__dirname, 'app'),
       Path.join(__dirname, 'app', 'components')
     ]
+  },
+  resolveLoader: {
+    root: Path.join(__dirname, "node_modules")
   },
   plugins: [
     new Webpack.optimize.OccurenceOrderPlugin(),

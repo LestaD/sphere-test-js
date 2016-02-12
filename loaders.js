@@ -32,7 +32,7 @@ exports.css_loaders_dev = [
 
 exports.css = {
   test: /\.css$/,
-  loaders: Extract.extract('style', exports.css_loaders)
+  loaders: [Extract.extract('style', exports.css_loaders)]
 };
 
 
@@ -41,7 +41,7 @@ exports.styl_loaders.unshift('stylus?paths=' + Path.join(__dirname, 'src', 'styl
 
 exports.styl = {
   test: /\.styl$/,
-  loaders: Extract.extract('style', exports.styl_loaders)
+  loaders: [Extract.extract('style', exports.styl_loaders)]
 };
 
 exports.styl_loaders_dev = exports.css_loaders_dev.slice();
