@@ -19,8 +19,8 @@ export default class Application {
 
   loadConfig() {
     try {
-      debug(`Loading config "${configPath}"...`);
       const configPath = joinPath(__dirname, 'config.json');
+      debug(`Loading config "${configPath}"...`);
 
       this.config = require(configPath);
     }
