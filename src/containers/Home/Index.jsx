@@ -11,7 +11,7 @@ export default class Index extends Component {
   render() {
     return (
       <div styleName="Index">
-        <h3>Weather</h3>
+        <h3>Weather{APIURL}</h3>
       </div>
     );
   }

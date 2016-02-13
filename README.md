@@ -16,6 +16,9 @@ cp api/config.example.json api/config.json
 ```bash
 npm install
 npm run build:production
+
+# if you changed default api port
+APIPORT=7001 npm run build:production
 ```
 
 Build artifacts places in `/dist`
@@ -27,7 +30,7 @@ Build artifacts places in `/dist`
 npm install --production    # install only server's packages
 npm run server
 # with port
-PORT=7000 npm run server
+APIPORT=7000 npm run server
 ```
 
 Run server in [pm2](https://www.npmjs.com/package/pm2)
@@ -36,7 +39,7 @@ Run server in [pm2](https://www.npmjs.com/package/pm2)
 npm install --global pm2
 npm start
 # with port
-PORT=7001 npm start
+APIPORT=7001 npm start
 ```
 
 
@@ -44,6 +47,8 @@ PORT=7001 npm start
 
 ```bash
 npm run watch          # one command for client and server
+# change ports
+APIPORT=7000 npm run watch
 
 npm run watch:client
 npm run watch:server

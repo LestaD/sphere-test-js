@@ -14,7 +14,7 @@ var L = require('./webpack.loaders.js');
 module.exports = {
   context: Path.join(__dirname, 'src'),
   entry: {
-    sphere: ['./application.js']
+    sphere: ['./client.js']
   },
   output: {
     path: Path.join(__dirname, 'dist'),
@@ -53,7 +53,8 @@ module.exports = {
     }),
     new Webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     new Webpack.optimize.DedupePlugin(),
-    new Webpack.NoErrorsPlugin()
+    new Webpack.NoErrorsPlugin(),
+    new Webpack.DefinePlugin({ APIURL: JSON.stringify('/api') })
   ],
   postcss: function() {
     return [Autoprefixer, ShortCss];

@@ -5,7 +5,7 @@ var Path = require('path');
 var config = require('./webpack.config.js');
 var L = require('./webpack.loaders.js');
 
-config.entry.sphere.unshift('webpack-hot-middleware/client')//, 'webpack/hot/dev-server');
+config.entry.sphere.unshift('webpack-hot-middleware/client');
 
 config.devtool = 'inline-source-map';
 // config.cache = true;
@@ -14,7 +14,10 @@ config.devtool = 'inline-source-map';
 
 config.plugins = [
   new Webpack.optimize.OccurenceOrderPlugin(),
-  new Webpack.HotModuleReplacementPlugin()
+  new Webpack.HotModuleReplacementPlugin(),
+  new Webpack.DefinePlugin({
+    APIURL: JSON.stringify('http://localhost:' + (process.env.APIPORT || 3000) + '/api')
+  })
 ];
 
 
