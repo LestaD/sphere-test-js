@@ -12,7 +12,7 @@ var L = require('./loaders.js');
 
 
 module.exports = {
-  context: Path.join(__dirname, 'src/'),
+  context: Path.join(__dirname, 'src'),
   entry: {
     sphere: ['./application.js']
   },
@@ -45,9 +45,6 @@ module.exports = {
       Path.join(__dirname, 'src'),
       Path.join(__dirname, 'src', 'components')
     ]
-  },
-  resolveLoader: {
-    root: Path.join(__dirname, "node_modules")
   },
   plugins: [
     new Webpack.optimize.OccurenceOrderPlugin(),
