@@ -2,11 +2,22 @@
   "folders":
   [
     {
+      "path": "api",
+      "name": "API"
+    },
+    {
+      "path": "src",
+      "name": "SPA"
+    },
+    {
       "path": ".",
       "name": "Sphere",
       "folder_exclude_patterns":
       [
-        "node_modules"
+        "node_modules",
+        "dist",
+        "src",
+        "api"
       ]
     }
   ]
