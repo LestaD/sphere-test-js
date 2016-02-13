@@ -3,7 +3,7 @@ var Webpack = require('webpack');
 var Path = require('path');
 
 var config = require('./webpack.config.js');
-var L = require('./loaders.js');
+var L = require('./webpack.loaders.js');
 
 config.entry.sphere.unshift('webpack-hot-middleware/client')//, 'webpack/hot/dev-server');
 

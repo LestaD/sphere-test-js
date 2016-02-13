@@ -7,7 +7,7 @@ var ShortCss = require('postcss-short');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var Package = require('./package.json');
-var L = require('./loaders.js');
+var L = require('./webpack.loaders.js');
 
 
 

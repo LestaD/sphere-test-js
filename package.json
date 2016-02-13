@@ -1,15 +1,19 @@
 {
   "name": "sphere-test-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "scripts": {
-    "clean": "rimraf ./build && mkdir ./build",
+    "start": "NODE_ENV=production pm2 start --name sphere -x \"npm run server\"",
+    "stop": "pm2 stop sphere && npm delete sphere",
+    "restart": "npm run stop && npm start",
+    "clean": "rimraf ./dist && mkdir ./dist",
     "watch": "concurrent --kill-others \"npm run watch:server\" \"npm run watch:client\"",
     "watch:client": "webpack-dev-server --port=7000 --config ./webpack.watch.js",
-    "watch:server": "nodemon -w ./api -x \"npm run server\"",
+    "watch:server": "DEBUG=sphere nodemon -w ./api -x \"npm run server\"",
     "server": "babel-node api",
     "build": "webpack --color --progress",
-    "build:production": "NODE_ENV=production webpack --config ./webpack.config.js"
+    "build:production": "NODE_ENV=production webpack --config ./webpack.config.js",
+    "test": "echo \"Sorry, no test specified!\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,9 @@
     "babel-polyfill": "^6.5.0",
     "express": "^4.13.4",
     "nonstandard": "^0.10.3-toc",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
     "rimraf": "^2.5.1"
   },
   "devDependencies": {
@@ -35,10 +42,7 @@
     "autoprefixer": "^6.3.2",
     "babel": "^6.5.2",
     "babel-loader": "^6.2.2",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.5.0",
     "baobab": "^2.3.3",
     "baobab-react": "^1.0.1",
