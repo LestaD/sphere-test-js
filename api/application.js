@@ -37,7 +37,7 @@ export default class Application {
   createApp() {
     this.app = Express();
     this.app.use(::this.httpLog);
-    this.app.use('/', routes);
+    this.app.use('/api', routes);
   }
 
   httpLog(req, res, next) {
