@@ -5,15 +5,11 @@ var Path = require('path');
 var config = require('./webpack.config.js');
 var L = require('./loaders.js');
 
-// config.entry.sphere.unshift(
-//   'webpack-dev-server/client?http://localhost:5000',
-//   'webpack/hot/dev-server'
-// );
+config.entry.sphere.unshift('webpack-hot-middleware/client')//, 'webpack/hot/dev-server');
 
-// config.entry.client = 'webpack-dev-server/client?http://localhost:5000';
-
+config.devtool = 'inline-source-map';
 // config.cache = true;
-config.debug = true;
+// config.debug = true;
 
 
 config.plugins = [
@@ -22,24 +18,13 @@ config.plugins = [
 ];
 
 
-var css = L.css;
-css.loaders = L.css_loaders_dev;
-
-var styl = L.styl;
-styl.loaders = L.styl_loaders_dev;
-
 config.module.loaders = [
-  css,
-  styl,
+  { test: L.css.test, loaders: L.css_loaders_dev },
+  { test: L.styl.test, loaders: L.styl_loaders_dev },
   L.html,
   L.json,
-  L.jpeg,
-  {
-    test: /\.jsx?$/,
-    loader: 'react-hot'
-  }
+  L.jpeg
 ];
-
 
 config.devServer = {
   contentBase: Path.resolve(__dirname, 'src'),

@@ -56,6 +56,7 @@
     "stylus-loader": "^1.5.1",
     "template-html-loader": "0.0.3",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.7.1"
   }
 }
