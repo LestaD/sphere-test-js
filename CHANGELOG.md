@@ -1,5 +1,32 @@
 # Changelog
 
+# v0.2.1
+
+* [[`17925d6b91`](https://github.com/LestaD/sphere-test-js/commit/17925d6b91)] - **add**: weather selector to card content (Sergey Sova)
+* [[`39e21ac8d5`](https://github.com/LestaD/sphere-test-js/commit/39e21ac8d5)] - **add**: some fixes (Sergey Sova)
+* [[`2e3be9cbe0`](https://github.com/LestaD/sphere-test-js/commit/2e3be9cbe0)] - **add**: weather icons (Sergey Sova)
+* [[`ea0792a834`](https://github.com/LestaD/sphere-test-js/commit/ea0792a834)] - **add**: submit button (Sergey Sova)
+* [[`6183783bbf`](https://github.com/LestaD/sphere-test-js/commit/6183783bbf)] - **add**: zoom effect (Sergey Sova)
+* [[`b22ba7f38a`](https://github.com/LestaD/sphere-test-js/commit/b22ba7f38a)] - **add**: selected signal (Sergey Sova)
+* [[`b693447de2`](https://github.com/LestaD/sphere-test-js/commit/b693447de2)] - **add**: margin to last element (Sergey Sova)
+* [[`363afdf285`](https://github.com/LestaD/sphere-test-js/commit/363afdf285)] - **add**: drop city button (Sergey Sova)
+* [[`2be55a62dc`](https://github.com/LestaD/sphere-test-js/commit/2be55a62dc)] - **add**: norender(Delete button) (Sergey Sova)
+* [[`d424e57fdd`](https://github.com/LestaD/sphere-test-js/commit/d424e57fdd)] - **add**: weather sign (Sergey Sova)
+* [[`000cf25b8c`](https://github.com/LestaD/sphere-test-js/commit/000cf25b8c)] - **add**: icon to reload button (Sergey Sova)
+* [[`bffd743046`](https://github.com/LestaD/sphere-test-js/commit/bffd743046)] - **add**: float refresh button (Sergey Sova)
+* [[`b457ce6e9f`](https://github.com/LestaD/sphere-test-js/commit/b457ce6e9f)] - **add**: search city. prevent 429 errors on client (Sergey Sova)
+* [[`62ddb33a0c`](https://github.com/LestaD/sphere-test-js/commit/62ddb33a0c)] - **add**: base weather card. some refactoring (Sergey Sova)
+* [[`199e6cec3b`](https://github.com/LestaD/sphere-test-js/commit/199e6cec3b)] - **add**: backup tree. add default city and current city (Sergey Sova)
+* [[`528a8b48c7`](https://github.com/LestaD/sphere-test-js/commit/528a8b48c7)] - **add**: baobab, first request to hardcoded value (Sergey Sova)
+* [[`6d7e09c673`](https://github.com/LestaD/sphere-test-js/commit/6d7e09c673)] - **add**: icons utils (Sergey Sova)
+* [[`6c8d68c490`](https://github.com/LestaD/sphere-test-js/commit/6c8d68c490)] - **add**: improve NotFound page view (Sergey Sova)
+* [[`20ab41c8a2`](https://github.com/LestaD/sphere-test-js/commit/20ab41c8a2)] - **add**: base stylus files. top panel search (Sergey Sova)
+* [[`bddde9da5c`](https://github.com/LestaD/sphere-test-js/commit/bddde9da5c)] - **fix**: close card on update (Sergey Sova)
+* [[`24439dfc56`](https://github.com/LestaD/sphere-test-js/commit/24439dfc56)] - **fix**: float button position on small screen (Sergey Sova)
+* [[`10368bde4d`](https://github.com/LestaD/sphere-test-js/commit/10368bde4d)] - **fix**: change theme fcolor (Sergey Sova)
+* [[`dfac085338`](https://github.com/LestaD/sphere-test-js/commit/dfac085338)] - **fix**: another fix (Sergey Sova)
+* [[`a1315544ae`](https://github.com/LestaD/sphere-test-js/commit/a1315544ae)] - **fix**: run server (Sergey Sova)
+* [[`a932906355`](https://github.com/LestaD/sphere-test-js/commit/a932906355)] - **fix**: run and build (Sergey Sova)
 
 ## v0.0.3
 
