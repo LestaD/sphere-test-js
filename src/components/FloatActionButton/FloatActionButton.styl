@@ -3,11 +3,15 @@
 .FloatActionButton
   align-items: center
   bottom: 3.2rem
+  right: 3.2rem
   display: flex
   size: 6rem
   justify-content: center
   position: fixed
-  right: 3.2rem
+
+  @media screen and (max-width: 768px)
+    bottom: 2rem
+    right: 2rem
 
   &.Hidden
     figure
