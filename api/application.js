@@ -1,4 +1,5 @@
 
+import CORS from 'cors';
 import Express from 'express';
 import routes from './routes';
 import { join as joinPath } from 'path';
@@ -36,6 +37,7 @@ export default class Application {
 
   createApp() {
     this.app = Express();
+    this.app.use(CORS());
     this.app.use(::this.httpLog);
     this.app.use('/api', routes);
   }

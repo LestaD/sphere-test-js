@@ -1,7 +1,7 @@
 
 import CSSModules from 'react-css-modules';
 import { PropTypes } from 'react';
-import { branch as Branch } from 'baobab-react/higher-order'
+import { branch as Branch, root as Root } from 'baobab-react/higher-order'
 
 global.Styles = (Styles) => (Component) => CSSModules(Component, Styles);
 
@@ -24,3 +24,4 @@ global.Navigator = function(Component) {
 
 global.SubscribedTo = (cursors) => (Component) => Branch(Component, { cursors });
 
+global.BaobabRoot = (baobab) => (Component) => Root(Component, baobab);

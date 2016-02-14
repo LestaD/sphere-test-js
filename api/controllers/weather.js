@@ -4,6 +4,11 @@ import { get } from '../requester';
 
 export default function weather(req, res) {
   const location = req.query.location;
+
+  if (!location) {
+    return res.status(400).json({ error: 'No `location` provided!' });
+  }
+
   let search = {
     q: location
   };

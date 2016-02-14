@@ -2,8 +2,10 @@ import css from './Home.styl';
 import React, { Component } from 'react';
 import DocumentTitle from 'react-document-title';
 import Search from 'Search';
+import Tree from 'tree';
 
 
+@BaobabRoot(Tree)
 @Styles(css)
 export default class Home extends Component {
 
