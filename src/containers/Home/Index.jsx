@@ -31,6 +31,12 @@ export default class Index extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.cities.length == 0) {
+      setTimeout(() => locateCity('Moscow'), 300);
+    }
+  }
+
   renderCity({ city, list }) {
     return <WeatherCard key={city.id} city={city} list={list} selected={this.props.selected == city.id} />;
   }
