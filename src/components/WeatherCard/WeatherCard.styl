@@ -33,7 +33,7 @@
       justify-content: center
       align-items: center
       font-size: 3rem
-      color: darkHintText
+      color: darkSecondaryText
       flex-grow: 1
       transition: font-size .3s
 
@@ -49,10 +49,11 @@
 
       svg
         size: 3rem
+        transition: all .23s ease-out
 
         path
           transition: fill .23s ease-out
-          fill: darkSecondaryText
+          fill: darkHintText
 
       &:hover
         background: darkDividerColor
@@ -91,6 +92,9 @@
         font-size: fontSizeBigger + 0.2rem
       .Weather
         font-size: 3rem + 0.2rem
+      .Delete
+        svg
+          size: 3rem + 0.2rem
 
     .Content
       opacity: 1

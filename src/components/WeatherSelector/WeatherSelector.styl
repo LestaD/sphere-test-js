@@ -3,3 +3,40 @@
 .WeatherSelector
   display: flex
   flex-flow: column nowrap
+
+  .Main
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    font-size: 1.6rem
+    padding-top: 1rem
+
+    .Info
+      display: flex
+      flex-grow: 1
+      color: darkSecondaryText
+
+      .Weather
+      .Wind
+        display: flex
+        padding: 2rem 3rem
+        justify-content: center
+        align-items: center
+        flex-flow: column nowrap
+
+        p
+          margin: 1rem 0
+          font-weight: fontWeightLine
+
+        i
+          font-size: 4rem
+
+    .Params
+      display: flex
+      flex-flow: column nowrap
+
+      p
+        font-weight: fontWeightLine
+        margin: .6rem 0
+        b
+          font-weight: fontWeightNormal
