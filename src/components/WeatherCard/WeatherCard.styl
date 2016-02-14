@@ -6,13 +6,53 @@
   margin-bottom: 2rem
   transition: all .3s
   position: relative
+  flex-flow: column nowrap
+  overflow: hidden
 
-  h3
+  .Header
     display: flex
-    font-weight: fontWeightThin
-    margin: 2rem 0
-    font-size: fontSizeBigger
+    flex-flow: ro nowrap
+    justify-content: space-between
+    transition: opactity .3s
+    opacity: 1
 
+    h3
+      display: flex
+      font-weight: fontWeightThin
+      margin: 2rem 0
+      font-size: fontSizeBigger
+
+    .Delete
+      align-items: center
+      border-radius: 50%
+      cursor: pointer
+      display: flex
+      justify-content: center
+      size: 6.6rem
+      background: transparent
+      transition: all .23s ease-out
+
+      svg
+        size: 3rem
+
+        path
+          transition: fill .23s ease-out
+          fill: darkSecondaryText
+
+      &:hover
+        background: darkDividerColor
+
+        svg
+          path
+            fill: colorAccent
 
   &:hover
     level-2()
+
+  &.Drop
+    height: 0
+    margin: 0
+    padding: 0
+
+    .Header
+      opacity: .0001
