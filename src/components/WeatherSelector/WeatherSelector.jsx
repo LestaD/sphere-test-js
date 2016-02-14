@@ -63,7 +63,7 @@ export default class WeatherSelector extends Component {
           <p>Minimal: <b>{main.temp_min}&deg;</b></p>
           <p>Maximal: <b>{main.temp_max}&deg;</b></p>
         </div>
-        <div styleName="Params">
+        <div styleName="Params2">
           <p>Humidity: <b>{main.humidity}%</b></p>
           <p>Pressure: <b>{main.pressure}mm</b></p>
           <p>Wind: <b>{wind.speed} m/s</b></p>
@@ -107,8 +107,6 @@ export default class WeatherSelector extends Component {
       item.origin_id = index;
       return toReturn;
     });
-
-    console.log(list[selected])
 
     return (
       <div styleName="WeatherSelector">
