@@ -2,11 +2,33 @@
 import { get } from '../requester';
 
 
+function makeRequest(req, res, search) {
+  get('/forecast', Object.assign(search, { units: 'metric' }))
+  .then(({ data }) => {
+
+    // api return error
+    if (data.cod >= 400) {
+      res.status(data.cod).json({ error: data });
+    }
+    else {
+      res.status(200).json({
+        success: true,
+        content: data
+      });
+    }
+  })
+  .catch((error) => {
+    res.status(error.data.cod || error.status).json({ error: error.data }).end();
+  });
+}
+
+
 export default function weather(req, res) {
   const location = req.query.location;
 
   if (!location) {
-    return res.status(400).json({ error: 'No `location` provided!' });
+    res.status(400).json({ error: 'No `location` provided!' });
+    return;
   }
 
   let search = {
@@ -22,21 +44,6 @@ export default function weather(req, res) {
     }
   }
 
-  get('/forecast', Object.assign(search, { units: 'metric' }))
-  .then(({ data }) => {
-
-    // api return error
-    if (data.cod >= 400) {
-      return res.status(data.cod).json({ error: data });
-    }
-
-    res.status(200).json({
-      success: true,
-      content: data
-    });
-  })
-  .catch(({ data }) => {
-    res.status(data.cod).json({ error: data });
-  });
+  makeRequest(req, res, search);
 }
 

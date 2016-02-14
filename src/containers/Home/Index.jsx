@@ -18,13 +18,20 @@ export default class Index extends Component {
   };
 
   componentWillMount() {
-    locateCity('New-York');
-
-    // Load position of user from Geolocation API
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        locateCity(`${coords.longitude},${coords.latitude}`);
+    if (this.props.cities.length) {
+      this.props.cities.map((city, index) => {
+        setTimeout(() => locateCity(city.city.name), 100 * index); // to prevent API error 429
       });
+    }
+    else {
+      locateCity('New-York');
+
+      // Load position of user from Geolocation API
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(({ coords }) => {
+          locateCity(`${coords.longitude},${coords.latitude}`);
+        });
+      }
     }
   }
 

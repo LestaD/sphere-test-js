@@ -43,7 +43,7 @@ export default class Application {
   }
 
   httpLog(req, res, next) {
-    console.log(`${req.method.toUpperCase()} ${req.url}`)
+    debug(`${req.method.toUpperCase()} ${req.url}`)
     next();
   }
 

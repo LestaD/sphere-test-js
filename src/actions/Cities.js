@@ -1,5 +1,5 @@
 
-import { get } from 'axios'
+import Axios from 'axios'
 import Tree from 'tree';
 
 
@@ -9,10 +9,10 @@ import Tree from 'tree';
  * @return {Promise}         City info
  */
 export function locateCity(query) {
-  const cities = Tree.select('cities', 'list');
 
-  return get(`/weather?location=${query}`)
+  return Axios.get(`/weather?location=${query}`)
   .then((response) => {
+    const cities = Tree.select('cities', 'list');
     const newCity = response.data.content;
     const targetIndex = cities.get().findIndex((saved) => saved.city.id === newCity.city.id);
 
