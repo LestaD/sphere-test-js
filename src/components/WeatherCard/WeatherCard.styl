@@ -8,6 +8,7 @@
   position: relative
   flex-flow: column nowrap
   overflow: hidden
+  height: 6.6rem
 
   .Header
     display: flex
@@ -15,6 +16,8 @@
     justify-content: space-between
     transition: opactity .3s
     opacity: 1
+    height: 6.6rem
+    flex-shrink: 0
 
     h3
       display: flex
@@ -58,6 +61,12 @@
           path
             fill: colorAccent
 
+  .Content
+    display: flex
+    flex-flow: column nowrap
+    opacity: 0
+    transition: all .3s
+
   &:hover
     level-2()
 
@@ -73,9 +82,16 @@
     level-3()
     margin: 0 -0.4rem
     margin-bottom: 2rem
+    height: 30rem
+    border-radius: .3rem
 
     .Header
       h3
         font-size: fontSizeBigger + 0.2rem
-    .Weather
-      font-size: 3rem + 0.2rem
+      .Weather
+        font-size: 3rem + 0.2rem
+
+    .Content
+      opacity: 1
+      margin-top: 1rem
+      border-top: .1rem solid darkDividerColor

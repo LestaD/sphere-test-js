@@ -2,6 +2,7 @@ import CN from 'classnames';
 import css from './WeatherCard.styl';
 import React, { Component, PropTypes } from 'react';
 
+import WeatherSelector from 'WeatherSelector';
 import { selectCity, dropCity } from 'actions/Cities';
 import { getIcon } from 'weather/icons';
 
@@ -77,6 +78,9 @@ export default class WeatherCard extends Component {
           <h3>{`${city.name}: `}&nbsp;{baseTemp}&deg;</h3>
           <div styleName="Weather"><i className={getIcon(list.first)} /></div>
           {this.renderCloseButton()}
+        </div>
+        <div styleName="Content">
+          <WeatherSelector list={list} />
         </div>
       </div>
     );
