@@ -65,7 +65,7 @@ export default class WeatherSelector extends Component {
         </div>
         <div styleName="Params2">
           <p>Humidity: <b>{main.humidity}%</b></p>
-          <p>Pressure: <b>{main.pressure}mm</b></p>
+          <p>Pressure: <b>{Math.floor(main.pressure)}mm</b></p>
           <p>Wind: <b>{wind.speed} m/s</b></p>
         </div>
       </div>
