@@ -76,3 +76,11 @@ exports.jpeg = {
   }
 };
 
+
+exports.font = {
+  test: /\.(eot(\#?|\_?|\??|\w+)?|svg(\#?|\_?|\??|\w+)?|ttf|woff2?)$/,
+  // loader: 'url?limit=10000&name="http://localhost:7000/[name]-[hash].[ext]"'
+  loader: 'file?name=[path][name].[ext]'
+}
+
+

@@ -31,7 +31,8 @@ module.exports = {
       L.styl,
       L.html,
       L.css,
-      L.jpeg
+      L.jpeg,
+      L.font
     ],
     preLoaders: [
       L.jsx,

@@ -3,7 +3,7 @@ import css from './WeatherCard.styl';
 import React, { Component, PropTypes } from 'react';
 
 import { selectCity, dropCity } from 'actions/Cities';
-import { getIcon } from 'utils/icons';
+import { getIcon } from 'weather/icons';
 
 const { shape, number, string, arrayOf, bool } = PropTypes
 
@@ -75,6 +75,7 @@ export default class WeatherCard extends Component {
       <div onClick={this.onClick} styleName="WeatherCard" className={CN({[css.Drop]: drop, [css.Selected]: selected})}>
         <div styleName="Header">
           <h3>{city.name}: &nbsp;{baseTemp}&deg;</h3>
+          <div styleName="Weather"><i className={getIcon(list.first)} /></div>
           {this.renderCloseButton()}
         </div>
       </div>

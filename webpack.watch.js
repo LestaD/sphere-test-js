@@ -5,6 +5,8 @@ var Path = require('path');
 var config = require('./webpack.config.js');
 var L = require('./webpack.loaders.js');
 
+config.output.publicPath = 'http://localhost:7000/'
+
 config.entry.sphere.unshift('webpack-hot-middleware/client');
 
 config.devtool = 'inline-source-map';
@@ -26,7 +28,8 @@ config.module.loaders = [
   { test: L.styl.test, loaders: L.styl_loaders_dev },
   L.html,
   L.json,
-  L.jpeg
+  L.jpeg,
+  L.font
 ];
 
 config.devServer = {

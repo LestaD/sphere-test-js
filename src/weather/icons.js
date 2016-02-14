@@ -1,5 +1,9 @@
 
-import weatherIcons from './icons.json';
+import ic from './weather-icons.css';
+import iw from './weather-icons-wind.css';
+import weatherIcons from './icons-list.json';
+
+
 
 // http://weathericons.io
 // https://gist.github.com/tbranyen/62d974681dea8ee0caa1
@@ -10,7 +14,7 @@ import weatherIcons from './icons.json';
  * @return {String}                 Class name with prefix
  */
 export function getIcon({ weather }) {
-  const prefix = 'wi wi-';
+  const prefix = 'wi-';
   const code = weather[0].id;
   let icon = weatherIcons[code].icon;
 
@@ -19,5 +23,5 @@ export function getIcon({ weather }) {
     icon = 'day-' + icon;
   }
 
-  return prefix + icon;
+  return ic[prefix + icon] + ' ' + ic.wi;
 }
