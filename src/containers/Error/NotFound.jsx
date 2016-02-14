@@ -12,7 +12,9 @@ export default class NotFound extends Component {
   render() {
     return (
       <div styleName="NotFound">
-        <h1>Page not found!</h1>
+        <div styleName="container">
+          <h1>Page not found!</h1>
+        </div>
       </div>
     );
   }
