@@ -1,0 +1,22 @@
+@import 'toolkit'
+
+html
+  font-size: 10px
+
+body
+  background-color: grey200
+  display: flex
+  font-family: Roboto
+  font-size: fontSize
+  justify-content: center
+  overflow-y: auto
+
+  :global #sphere
+    display: flex
+    width: 100%
+    align-items: center
+    flex-flow: column nowrap
+
+    & > main
+      width: 100%
+      align-items: center

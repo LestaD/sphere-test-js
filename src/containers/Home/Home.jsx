@@ -1,5 +1,7 @@
 import css from './Home.styl';
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
+import Search from 'Search';
 
 
 @Styles(css)
@@ -10,10 +12,14 @@ export default class Home extends Component {
    */
   render() {
     return (
-      <div styleName="Home">
-        <h2>Hello</h2>
-        {this.props.children}
-      </div>
+      <DocumentTitle title="Weather">
+        <main styleName="Home">
+          <Search />
+          <div styleName="container">
+            {this.props.children}
+          </div>
+        </main>
+      </DocumentTitle>
     );
   }
 }

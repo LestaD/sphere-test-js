@@ -38,7 +38,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['', '.js', '.jsx', '.json', '.styl'],
     modulesDirectories: [
       'web_modules',
       'node_modules',
