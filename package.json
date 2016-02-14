@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "",
   "scripts": {
-    "start": "NODE_ENV=production pm2 start --name sphere -x \"./run\"",
+    "start": "NODE_ENV=production pm2 start --name sphere -x \"./run.js\"",
     "stop": "pm2 stop sphere && npm delete sphere",
     "restart": "npm run stop && npm start",
     "clean": "rimraf ./dist && mkdir ./dist",
