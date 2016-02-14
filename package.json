@@ -1,6 +1,6 @@
 {
   "name": "sphere-test-js",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "",
   "scripts": {
     "start": "NODE_ENV=production pm2 start --name sphere -x \"./run.js\"",

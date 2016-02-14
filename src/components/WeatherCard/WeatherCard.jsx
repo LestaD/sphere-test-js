@@ -74,7 +74,7 @@ export default class WeatherCard extends Component {
     return (
       <div onClick={this.onClick} styleName="WeatherCard" className={CN({[css.Drop]: drop, [css.Selected]: selected})}>
         <div styleName="Header">
-          <h3>{city.name}: &nbsp;{baseTemp}&deg;</h3>
+          <h3>{`${city.name}: `}&nbsp;{baseTemp}&deg;</h3>
           <div styleName="Weather"><i className={getIcon(list.first)} /></div>
           {this.renderCloseButton()}
         </div>
