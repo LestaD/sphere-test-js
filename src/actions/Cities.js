@@ -16,12 +16,12 @@ export function locateCity(query) {
     const newCity = response.data.content;
     const targetIndex = cities.get().findIndex((saved) => saved.city.id === newCity.city.id);
 
-    // If city doesn't exists add it or update
-    if (targetIndex == -1) {
-      cities.unshift(newCity);
+    // Update city if exists, or add
+    if (targetIndex > -1) {
+      cities.set(targetIndex, newCity);
     }
     else {
-      cities.set(targetIndex, newCity);
+      cities.unshift(newCity);
     }
 
     // clear cursor memory
@@ -52,6 +52,14 @@ export function dropCity(cityId) {
 
   // clear memory
   cities.release();
-  selected.release();
+}
+
+
+/**
+ * Set selected city
+ * @param  {Number} cityId City id from API
+ */
+export function selectCity(cityId) {
+  Tree.select('cities', 'selected').set(cityId);
 }
 

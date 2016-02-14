@@ -36,7 +36,6 @@ export default class Index extends Component {
 
     return (
       <div styleName="Index">
-        <h3>Weather{APIURL}</h3>
         <h2>{cities.map((city) => <div key={city.city.id}>{city.city.name}</div>)}</h2>
       </div>
     );

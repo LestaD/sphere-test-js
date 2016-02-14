@@ -1,5 +1,5 @@
 
-import weatherIcons from 'icons.json';
+import weatherIcons from './icons.json';
 
 // http://weathericons.io
 // https://gist.github.com/tbranyen/62d974681dea8ee0caa1
