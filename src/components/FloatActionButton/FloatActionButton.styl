@@ -4,17 +4,19 @@
   align-items: center
   bottom: 3.2rem
   display: flex
-  height: 6rem
+  size: 6rem
   justify-content: center
   position: fixed
   right: 3.2rem
-  width: 6rem
 
   &.Hidden
     figure
       width: 0 !important
       height: 0 !important
       font-size: 0.00001rem !important
+
+      svg
+        size: 0.0000001rem
 
   figure
     level-3()
@@ -25,16 +27,24 @@
     cursor: pointer
     display: flex
     font-size: 3rem
-    height: 5.6rem
+    size: 5.6rem
     justify-content: center
     line-height: 3rem
     margin: 0
-    width: 5.6rem
     border: 0px solid colorAccent
     zoom: 1
     transition: all .12s ease-in
 
+    svg
+      transition: all .12s
+      size: 2.4rem
+
+      path
+        fill: white
+
     &:hover
       level-4()
-      width: 5.8rem
-      height: 5.8rem
+      size: 5.8rem
+
+      svg
+        size: 2.6rem
