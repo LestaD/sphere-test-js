@@ -55,6 +55,24 @@ export function dropCity(cityId) {
 }
 
 
+
+/**
+ * Update info about all loaded cities
+ */
+export function updateCities() {
+  const cities = Tree.select('cities', 'list').get();
+  let promiseArr = cities.map((city, index) => new Promise((resolve) => {
+    setTimeout(() => {
+      locateCity(city.city.name);
+      resolve();
+    }, 150 * index); // to prevent API error 429
+  }));
+
+  return Promise.all(promiseArr);
+}
+
+
+
 /**
  * Set selected city
  * @param  {Number} cityId City id from API

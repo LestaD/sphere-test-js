@@ -1,6 +1,7 @@
 import css from './Index.styl';
 import React, { Component, PropTypes } from 'react';
 
+import WeatherCard from 'WeatherCard';
 import { locateCity } from 'actions/Cities';
 
 
@@ -18,12 +19,7 @@ export default class Index extends Component {
   };
 
   componentWillMount() {
-    if (this.props.cities.length) {
-      this.props.cities.map((city, index) => {
-        setTimeout(() => locateCity(city.city.name), 100 * index); // to prevent API error 429
-      });
-    }
-    else {
+    if (!this.props.cities.length) {
       locateCity('New-York');
 
       // Load position of user from Geolocation API
@@ -35,6 +31,10 @@ export default class Index extends Component {
     }
   }
 
+  renderCity({ city, list }) {
+    return <WeatherCard key={city.id} city={city} list={list} selected={this.props.selected == city.id} />;
+  }
+
   /**
    * Render component Index
    */
@@ -43,7 +43,7 @@ export default class Index extends Component {
 
     return (
       <div styleName="Index">
-        <h2>{cities.map((city) => <div key={city.city.id}>{city.city.name}</div>)}</h2>
+        <h2>{cities.map(::this.renderCity)}</h2>
       </div>
     );
   }

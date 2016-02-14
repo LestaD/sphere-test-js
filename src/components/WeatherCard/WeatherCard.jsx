@@ -4,23 +4,29 @@ import React, { Component, PropTypes } from 'react';
 import { selectCity, dropCity } from 'actions/Cities';
 import { getIcon } from 'utils/icons';
 
+const { shape, number, string, arrayOf, bool } = PropTypes
 
 @Styles(css)
 export default class WeatherCard extends Component {
 
   static propTypes = {
-    city: PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string
-    }),
-    list: PropTypes.arrayOf(PropTypes.shape({
-      dt: PropTypes.number, // new Date(dt * 1000),
-      weather: PropTypes.shape({
-        id: PropTypes.number,
-        main: PropTypes.string,
-        icon: PropTypes.string
-      })
-    }))
+    city: shape({
+      id: number,
+      name: string
+    }).isRequired,
+    list: arrayOf(shape({
+      dt: number, // new Date(dt * 1000),
+      weather: arrayOf(shape({
+        id: number,
+        main: string,
+        icon: string
+      }))
+    })).isRequired,
+    selected: bool
+  };
+
+  static defaultProps = {
+    selected: false
   };
 
 
@@ -36,9 +42,11 @@ export default class WeatherCard extends Component {
    * Render component WeatherCard
    */
   render() {
+    const { city, list } = this.props;
+
     return (
       <div styleName="WeatherCard">
-
+        <h3>{city.name}</h3>
       </div>
     );
   }

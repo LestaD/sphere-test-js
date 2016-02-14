@@ -7,7 +7,7 @@
     "stop": "pm2 stop sphere && npm delete sphere",
     "restart": "npm run stop && npm start",
     "clean": "rimraf ./dist && mkdir ./dist",
-    "watch": "concurrent --kill-others \"npm run watch:server\" \"npm run watch:client\"",
+    "watch": "concurrent --kill-others --prefix none \"npm run watch:server\" \"npm run watch:client\"",
     "watch:client": "webpack-dev-server --port=7000 --config ./webpack.watch.js",
     "watch:server": "DEBUG=sphere nodemon -w ./api -x \"npm run server\"",
     "server": "babel-node api",
