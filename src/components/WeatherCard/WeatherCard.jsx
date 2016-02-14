@@ -1,3 +1,4 @@
+import CN from 'classnames';
 import css from './WeatherCard.styl';
 import React, { Component, PropTypes } from 'react';
 
@@ -34,10 +35,19 @@ export default class WeatherCard extends Component {
   };
 
   onClick = (event) => {
-    selectCity(this.props.city.id);
+    event.stopPropagation();
+
+    if (this.props.selected) {
+      selectCity(-1);
+    }
+    else {
+      selectCity(this.props.city.id);
+    }
   }
 
   onDropClick = (event) => {
+    event.stopPropagation();
+
     this.setState({ drop: true });
     setTimeout(() => dropCity(this.props.city.id), 320);
   }
@@ -56,13 +66,13 @@ export default class WeatherCard extends Component {
    * Render component WeatherCard
    */
   render() {
-    const { city, list } = this.props;
+    const { city, list, selected } = this.props;
     const { drop } = this.state;
     let baseTemp = Math.ceil(list.first.main.temp)
     if (baseTemp == 0) baseTemp = 0;
 
     return (
-      <div styleName="WeatherCard" className={drop ? css.Drop : ''}>
+      <div onClick={this.onClick} styleName="WeatherCard" className={CN({[css.Drop]: drop, [css.Selected]: selected})}>
         <div styleName="Header">
           <h3>{city.name}: &nbsp;{baseTemp}&deg;</h3>
           {this.renderCloseButton()}
