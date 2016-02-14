@@ -60,11 +60,31 @@ export default class WeatherSelector extends Component {
           </div>
         </div>
         <div styleName="Params">
+          <p>Minimal: <b>{main.temp_min}&deg;</b></p>
+          <p>Maximal: <b>{main.temp_max}&deg;</b></p>
+        </div>
+        <div styleName="Params">
           <p>Humidity: <b>{main.humidity}%</b></p>
           <p>Pressure: <b>{main.pressure}mm</b></p>
           <p>Wind: <b>{wind.speed} m/s</b></p>
         </div>
       </div>
+    );
+  }
+
+  renderDaysItem({ dt_txt, dt, weather, main, origin_id }) {
+    const date = new Date(dt * 1000); // convert to ms
+    const [weekday, month, day, year] = date.toDateString().split(' ');
+
+
+    return (
+      <article onClick={::this.select::args(origin_id)} key={dt} className={CN({ [css.Selected]: origin_id == this.state.selected })}>
+        <h4>{day + ' ' + month}</h4>
+        <div styleName="Icon">
+          <i className={CN(wi, getIcon({ weather }))} />
+        </div>
+        <p>{Math.floor(main.temp_min)}&deg; / {Math.floor(main.temp_max)}&deg;</p>
+      </article>
     );
   }
 
@@ -74,11 +94,28 @@ export default class WeatherSelector extends Component {
   render() {
     const { list } = this.props;
     const { selected } = this.state;
+    let previousDay = '';
 
+    const filtered = list.filter((item, index) => {
+      const date = new Date(item.dt * 1000); // convert to ms
+      const [weekday, month, day, year] = date.toDateString().split(' ');
+
+      // keep only diff days
+      const toReturn = previousDay != day;
+
+      previousDay = day;
+      item.origin_id = index;
+      return toReturn;
+    });
+
+    console.log(list[selected])
 
     return (
       <div styleName="WeatherSelector">
         {this.renderPlate(list[selected])}
+        <div styleName="Selector">
+          {filtered.map(::this.renderDaysItem)}
+        </div>
       </div>
     );
   }

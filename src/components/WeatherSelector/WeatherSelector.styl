@@ -19,13 +19,14 @@
       .Weather
       .Wind
         display: flex
-        padding: 2rem 3rem
+        padding: .8rem 3rem 1.8rem
         justify-content: center
         align-items: center
         flex-flow: column nowrap
 
         p
           margin: 1rem 0
+          margin-top: 0
           font-weight: fontWeightLine
 
         i
@@ -34,9 +35,44 @@
     .Params
       display: flex
       flex-flow: column nowrap
+      justify-content: space-around;
+      padding: 0 2rem
 
       p
         font-weight: fontWeightLine
         margin: .6rem 0
         b
           font-weight: fontWeightNormal
+
+  .Selector
+    display: flex
+    border-top: 0.1rem solid darkDividerColor
+    height: 11.4rem
+    justify-content: space-around
+
+    article
+      display: flex
+      flex-flow: column nowrap
+      color: darkSecondaryText
+      cursor: pointer
+
+      h4
+        font-size: fontSizeSmall
+        margin-bottom: 1rem
+        text-align: center
+
+      .Icon
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 2.6rem
+
+      p
+        margin: 0
+        margin-top: 1rem
+        font-size: fontSizeSmall
+        font-weight: fontWeightNormal
+
+
+      &.Selected
+        color: colorAccent
