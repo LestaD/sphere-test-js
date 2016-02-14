@@ -43,10 +43,12 @@ export default class WeatherCard extends Component {
    */
   render() {
     const { city, list } = this.props;
+    let baseTemp = Math.ceil(list.first.main.temp)
+    if (baseTemp == 0) baseTemp = 0;
 
     return (
       <div styleName="WeatherCard">
-        <h3>{city.name}</h3>
+        <h3>{city.name}: &nbsp;{baseTemp}&deg;</h3>
       </div>
     );
   }
