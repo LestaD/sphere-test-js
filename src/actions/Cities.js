@@ -60,6 +60,8 @@ export function dropCity(cityId) {
  * Update info about all loaded cities
  */
 export function updateCities() {
+  selectCity(-1);
+
   const cities = Tree.select('cities', 'list').get();
   let promiseArr = cities.map((city, index) => new Promise((resolve) => {
     setTimeout(() => {

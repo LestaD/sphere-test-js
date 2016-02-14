@@ -6,7 +6,7 @@ import WeatherSelector from 'WeatherSelector';
 import { selectCity, dropCity } from 'actions/Cities';
 import { getIcon } from 'weather/icons';
 
-const { shape, number, string, arrayOf, bool } = PropTypes
+const { shape, number, string, arrayOf, bool } = PropTypes;
 
 @Styles(css)
 export default class WeatherCard extends Component {
@@ -73,8 +73,8 @@ export default class WeatherCard extends Component {
     if (baseTemp == 0) baseTemp = 0;
 
     return (
-      <div onClick={this.onClick} styleName="WeatherCard" className={CN({[css.Drop]: drop, [css.Selected]: selected})}>
-        <div styleName="Header">
+      <div styleName="WeatherCard" className={CN({[css.Drop]: drop, [css.Selected]: selected})}>
+        <div styleName="Header" onClick={this.onClick}>
           <h3>{`${city.name}: `}&nbsp;{baseTemp}&deg;</h3>
           <div styleName="Weather"><i className={getIcon(list.first)} /></div>
           {this.renderCloseButton()}
